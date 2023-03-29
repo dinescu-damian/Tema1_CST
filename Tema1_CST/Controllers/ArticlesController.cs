@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tema1_CST.Core.Services;
+using Tema1_CST.DataLayer.Dtos;
 using Tema1_CST.DataLayer.Entities;
 
 namespace Tema1_CST.Controllers
@@ -34,7 +35,7 @@ namespace Tema1_CST.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Article article)
+        public async Task<IActionResult> Post([FromBody] ArticleDto article)
         {
             if (article == null)
             {
@@ -49,7 +50,7 @@ namespace Tema1_CST.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] Article article)
+        public async Task<IActionResult> Put(Guid id, [FromBody] ArticleDto article)
         {
             if (article == null)
             {
