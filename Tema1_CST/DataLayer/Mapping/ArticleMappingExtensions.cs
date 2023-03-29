@@ -12,11 +12,18 @@ namespace Tema1_CST.DataLayer.Mapping
                 Id = article.Id,
                 Title = article.Title,
                 Content = article.Content,
+                ImageUrl = article.ImageUrl,
                 PublishDate = article.PublishDate,
                 AuthorId = article.AuthorId,
                 Comments = article.Comments.Select(c => c.ToDto()).ToList()
             };
         }
+
+        public static List<ArticleDto> ToDtos(this List<Article> articles)
+        {
+            return articles.Select(a => a.ToDto()).ToList();
+        }
+
         public static Article ToEntity(this ArticleDto articleDto)
         {
             return new Article
@@ -25,9 +32,8 @@ namespace Tema1_CST.DataLayer.Mapping
                 Title = articleDto.Title,
                 Content = articleDto.Content,
                 PublishDate = articleDto.PublishDate,
+                ImageUrl = articleDto.ImageUrl,
                 AuthorId = articleDto.AuthorId,
-                // Get the Author from the database using the AuthorId
-                //Author
                 Comments = articleDto.Comments.Select(c => c.ToEntity()).ToList()
             };
         }
