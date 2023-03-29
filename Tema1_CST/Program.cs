@@ -1,5 +1,6 @@
 using Tema1_CST.Core.Services;
 using Tema1_CST.DataLayer;
+using Tema1_CST.DataLayer.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IArticleCollectionService, ArticleCollectionService>();
 builder.Services.AddDbContext<DataContext>();
+builder.Services.AddScoped<ArticlesRepository>();
 
 var app = builder.Build();
 
