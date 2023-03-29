@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="DataLayer\Dtos\" />
     <Folder Include="DataLayer\Mapping\" />
     <Folder Include="DataLayer\Repositories\" />
