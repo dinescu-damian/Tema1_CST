@@ -4,7 +4,7 @@
     {
         public Guid Id { get; set; }
         public string Title { get; set; } = string.Empty;
-        public string AuthorId { get; set; } = string.Empty;
+        public Guid AuthorId { get; set; }
         public Author Author { get; set; } = null!;
         public string Content { get; set; } = string.Empty;
         public DateTime PublishDate { get; set; }
