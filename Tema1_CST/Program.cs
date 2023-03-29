@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IArticleCollectionService, ArticleCollectionService>();
 builder.Services.AddDbContext<DataContext>();
+builder.Services.AddScoped<AuthorsRepository>();
 builder.Services.AddScoped<ArticlesRepository>();
 
 var app = builder.Build();
